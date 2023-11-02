@@ -71,13 +71,21 @@ data4.open("GET","https://restcountries.com/v3.1/all","true");
       //conver raw to parse
     const result5=JSON.parse(data5);
  console.log(result5);
- const yy3=result5.map((ele8)=>{
-  for(let i=0;i<=result5.length;i++){
-    console.log();
+ const yy3=result5.filter((ele8)=>{
+  
+  return ele8.currencies!==undefined
 
-  }
  })
-
+  console.log(yy3);
+  
+  const yy01=yy3.map((ele8)=>{
+  if(ele8.currencies.hasOwnProperty("USD")){
+    console.log(ele8.name.common);
+    //return ele8.name.common
+  }
+   //console.log(yy01);
+   })
+   //console.log(yy01);
  
  }
 
